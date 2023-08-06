@@ -1,7 +1,7 @@
 # Password Manager
 This is a Django project that allows users to store and manage passwords securely. It also provides a password generator to create strong random passwords.
 
-Features
+#### Features
 * User registration and login
 * Secure password storage using bcrypt
 * Password generator with options for length, symbols, numbers etc.
@@ -12,6 +12,7 @@ Features
 ## Usage
 Clone the repo:
 ```git clone https://github.com/yourname/password-manager.git```
+
 Create and activate a virtual environment:
 ```
 python -m venv env
