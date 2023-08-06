@@ -11,7 +11,7 @@ This is a Django project that allows users to store and manage passwords securel
 
 ## Usage
 Clone the repo:
-```git clone https://github.com/yourname/password-manager.git```
+```git clone https://github.com/StephT0560/PasswordManager```
 
 Create and activate a virtual environment:
 ```
