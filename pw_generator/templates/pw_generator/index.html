@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width,intial-scale=1.0">
+    <link rel ="stylesheet" type = "text/css" href ="{% static 'pw_gen/styles.css'%}">
+    <title> Password Generator </title>
+</head>
+<body>
+    <a class = "backButton" href ="{% url 'all-page'%}">Back to Dashboard</a>
+    <div class = "titleContainer">
+        <h1 class="title">Password Generator</h1>
+    </div>
+    
+    <div class ="card">
+        <form method="POST">
+            {% csrf_token %}
+            <p class="lengthRange"><span id = "lengthRange"></span></p>
+            {% for field in form %}
+            <div class ="inputContainer">
+                {{field.errors}}
+                {{ field.label_tag }} {{ field }}
+            </div>
+            {% endfor %}
+            <button class="submitButton"> Generate</button>
+        </form>
+    </div>
+
+    <script>
+        const slider = document.getElementById('lengthRangeInput')
+        let output = document.getElementById('lengthRange')
+        output.innerHTML = slider.value
+
+        output.style.color = '#90ee90'
+        slider.oninput = function(){
+            if(this.value <= 12){
+                //red
+                output.style.color = '#FF0000'
+            }
+            else if(this.value < 30){
+                // orange
+                output.style.color = '#FFBF00'
+            }
+            else{
+                output.style.color = '#90ee90'
+            }
+            output.innerHTML=this.value
+        }
+    </script>
+</body>
+</html>
